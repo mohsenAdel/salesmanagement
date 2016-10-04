@@ -1,0 +1,12 @@
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\Domain.dll
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.dll
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\Domain.pdb
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.xml
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

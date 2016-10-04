@@ -1,0 +1,14 @@
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\bin\Debug\SalesManagement.exe.config
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\bin\Debug\SalesManagement.exe
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\bin\Debug\SalesManagement.pdb
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.csprojResolveAssemblyReference.cache
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\MainWindow.g.cs
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\App.g.cs
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement_MarkupCompile.cache
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement_MarkupCompile.lref
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\MainWindow.baml
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.g.resources
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.Properties.Resources.resources
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.csproj.GenerateResource.Cache
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.exe
+c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.pdb
