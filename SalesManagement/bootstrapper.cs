@@ -12,10 +12,10 @@ namespace SalesManagement
 {
     class bootstrapper:UnityBootstrapper
     {
-        //protected override DependencyObject CreateShell()
-        //{
-        //   // return Container.Resolve<Views.MainWindow>();
-        //}
+        protected override DependencyObject CreateShell()
+        {
+            return Container.Resolve<Views.MainWindow>();
+        }
 
         protected override void InitializeShell()
         {
