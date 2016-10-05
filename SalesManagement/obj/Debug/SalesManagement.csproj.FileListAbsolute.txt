@@ -12,3 +12,39 @@ c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManag
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.csproj.GenerateResource.Cache
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.exe
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\SalesManagement\obj\Debug\SalesManagement.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\SalesManagement.exe.config
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.exe
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.pdb
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.csprojResolveAssemblyReference.cache
+E:\SalesManagement\SalesManagement\obj\Debug\Resources\Styles.baml
+E:\SalesManagement\SalesManagement\obj\Debug\Resources\TabItemResource.baml
+E:\SalesManagement\SalesManagement\obj\Debug\MainWindow.g.cs
+E:\SalesManagement\SalesManagement\obj\Debug\App.g.cs
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement_MarkupCompile.cache
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement_MarkupCompile.lref
+E:\SalesManagement\SalesManagement\bin\Debug\SalesManagement.exe
+E:\SalesManagement\SalesManagement\bin\Debug\SalesManagement.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.Unity.Wpf.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.Wpf.dll
+E:\SalesManagement\SalesManagement\bin\Debug\SalesModule.dll
+E:\SalesManagement\SalesManagement\bin\Debug\System.Windows.Interactivity.dll
+E:\SalesManagement\SalesManagement\bin\Debug\SalesModule.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.Unity.Wpf.xml
+E:\SalesManagement\SalesManagement\bin\Debug\Prism.Wpf.xml
+E:\SalesManagement\SalesManagement\obj\Debug\Controls\RoundedBox.baml
+E:\SalesManagement\SalesManagement\obj\Debug\Controls\RoundedBox.g.cs
+E:\SalesManagement\SalesManagement\obj\Debug\MainWindow.baml
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.g.resources
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.Properties.Resources.resources
+E:\SalesManagement\SalesManagement\obj\Debug\SalesManagement.csproj.GenerateResource.Cache
