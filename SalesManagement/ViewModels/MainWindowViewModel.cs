@@ -22,7 +22,7 @@ namespace SalesManagement.ViewModels
 
         private void Navigate(string Uri)
         {
-            _RegionManager.RequestNavigate("details", Uri);
+            _RegionManager.RequestNavigate("ContentRegion", Uri);
         }
     }
 }

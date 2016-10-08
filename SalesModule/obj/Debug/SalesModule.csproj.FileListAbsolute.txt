@@ -37,3 +37,9 @@ E:\SalesManagement\SalesModule\obj\Debug\SalesModule_MarkupCompile.lref
 E:\SalesManagement\SalesModule\obj\Debug\Views\Customer.baml
 E:\SalesManagement\SalesModule\obj\Debug\Views\CustomerList.baml
 E:\SalesManagement\SalesModule\obj\Debug\SalesModule.g.resources
+E:\SalesManagement\SalesModule\obj\Debug\Views\Item.g.cs
+E:\SalesManagement\SalesModule\obj\Debug\Views\Item.baml
+E:\SalesManagement\SalesModule\obj\Debug\Views\ItemsList.g.cs
+E:\SalesManagement\SalesModule\obj\Debug\Views\ItemsList.baml
+E:\SalesManagement\SalesModule\obj\Debug\Views\SalesTrans.g.cs
+E:\SalesManagement\SalesModule\obj\Debug\Views\SalesTrans.baml

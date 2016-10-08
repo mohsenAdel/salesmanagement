@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-2887162970
+51286354457
 
-14-1857151059
+20792227965
 76335951135
-Views\Customer.xaml;Views\CustomerList.xaml;
+Views\Customer.xaml;Views\CustomerList.xaml;Views\Item.xaml;Views\ItemsList.xaml;Views\SalesTrans.xaml;
 
-False
+True
 

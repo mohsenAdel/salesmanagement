@@ -23,10 +23,10 @@
     <Grid  FlowDirection="RightToLeft" x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35" />
-                <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
-            <RowDefinition Height="35" />
+                <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -45,6 +45,6 @@
         <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="الهاتف:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
         <TextBox Name="txtPhone" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrrentCustomer.CustomerPhone, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
 
-        <Button Content="حفظ"  Grid.Row="3" Grid.Column="1" Command="{Binding SaveCustomerCommand }"></Button>
+        <Button Content="حفظ"  Grid.Row="3" Grid.Column="1" Command="{Binding SaveCustomerCommand }" Width="200"></Button>
     </Grid>
 </UserControl>

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="SalesModule.Views.ItemsList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SalesModule.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="btnNewItem" Content="اضافة جديد" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="Item"/>
+        <ListView BorderThickness="0" Width="Auto" Grid.Row="1"
+                 ItemsSource="{Binding Path=Items,Mode=TwoWay,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}"
+                  SelectedItem="{Binding Path=CurrentPositionSummaryItem, Mode=TwoWay}"  AlternationCount="2"
+                  IsSynchronizedWithCurrentItem="True" AutomationProperties.AutomationId="PositionSummaryGrid" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Current positions"
+                          >
+
+                    <GridViewColumn Header="الكود"  
+                  DisplayMemberBinding="{Binding ID}"
+                  Width="65" />
+                    <GridViewColumn Header="الاسم"  
+                  DisplayMemberBinding="{Binding itemName}"
+                  Width="85" />
+                    <GridViewColumn Header="الكمية"  
+                  DisplayMemberBinding="{Binding ItemCount}"
+                                    
+                  Width="85" />
+
+
+                    <GridViewColumn Header="وحدة البيع"  
+                  DisplayMemberBinding="{Binding UnitPrice.UntPrice}"
+                                    
+                  Width="85" />
+
+                    <GridViewColumn Header="سعر الوحدة"  
+                  DisplayMemberBinding="{Binding SuggestedPrice}"
+                                    
+                  Width="85" />
+
+                    <!--<GridViewColumn Header="حد الأمان"  
+                  DisplayMemberBinding="{Binding MenimumCount}"
+                                    
+                  Width="85" />-->
+                    
+
+                    <GridViewColumn Header="Actions">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="47"/>
+                                        <ColumnDefinition  Width="47"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="0" Command="{Binding Path=DataContext.GetCurrentCustomerCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="Item" AutomationProperties.AutomationId="ActionsBuyButton" Template="{StaticResource AddButtonTemplate}"  Cursor="Hand" Width="30" />
+                                    <Button Grid.Column="1" Command="{Binding Path=DataContext.SellCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding Path=TickerSymbol}" AutomationProperties.AutomationId="ActionsSellButton" Template="{StaticResource RemoveButtonTemplate}" Cursor="Hand"  Width="30"/>
+
+                                </Grid>
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
