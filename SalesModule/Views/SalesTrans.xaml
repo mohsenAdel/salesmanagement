@@ -15,48 +15,24 @@
 
         <WrapPanel Grid.Row="0">
 
-            <StackPanel Orientation="Horizontal"/>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="0" Grid.Column="2" x:Name="lblCustomerID" Content="كود العميل:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
-                <TextBox  x:Name="txtCustomerCode" Grid.Column="3" HorizontalAlignment="Left" Height="40" Margin="5,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" FontSize="14" />
-            </StackPanel>
-
             <StackPanel Orientation="Horizontal">
                 <Label Grid.Row="0" Grid.Column="4" x:Name="lblCustomerName" Content="إسم العميل:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
                 <ComboBox  x:Name="cmbCustomerName" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Top" Width="180" Height="40" FontSize="16"/>
-            </StackPanel>
-            <Label Grid.Row="1" Grid.Column="6" x:Name="lblBillNumber" Content="رقم الفاتوره:" Margin="4,10,6,0" FontSize="12" FontWeight="Bold"/>
-            <TextBox  x:Name="txtBillNumber" Grid.Column="7" HorizontalAlignment="Left" Height="40" Margin="10,10,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101" FontSize="14" Grid.Row="1"/>
-            <StackPanel Orientation="Horizontal">
-                <Label Grid.Column="6" x:Name="lbltransNum" Visibility="Visible" Content="اذن صرف العميل:" Margin="4,10,6,0" FontSize="12" FontWeight="Bold"/>
-                <TextBox x:Name="txtTransNumb" Visibility="Visible"  HorizontalAlignment="Left" Height="40" Margin="3,10,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" FontSize="14"/>
-                <Button   x:Name="btnAddOrder" Visibility="Visible" Content="إضافه إذن" FontSize="14" Margin="10,10,5,10"  Width="92" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="1" Grid.Column="0" x:Name="lblItem" Content="الصنف:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
-
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="1" Grid.Column="2" x:Name="lblColor"  Content="اللون:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
-                <ComboBox  x:Name="cmbColor" HorizontalAlignment="Left" Margin="5,5,5,5" VerticalAlignment="Top" Width="152" Height="40" FontSize="14"/>
-
-            </StackPanel>
-
-
-
-            <StackPanel Orientation="Horizontal">
-                <Label  x:Name="lblMeterCount" Content="توب - متر:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
-                <TextBox  x:Name="txtrollCount"  HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" FontSize="14"/>
-                <TextBox  x:Name="txtMeterCount"  HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" FontSize="14" />
+                <Label x:Name="lblBillNumber" Content=" باركود الصنف:" Margin="4,10,6,0" FontSize="12" FontWeight="Bold"/>
+                <TextBox  x:Name="txtItemNumber"  HorizontalAlignment="Left" Height="40" Margin="10,10,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="258" FontSize="14" MinWidth="100" />
+            
+                <Label Grid.Column="6" x:Name="lbltransNum" Visibility="Visible" Content="اسم الصنف:" Margin="4,10,6,0" FontSize="12" FontWeight="Bold"/>
+                <TextBox x:Name="txtItemName" Visibility="Visible"  HorizontalAlignment="Left" Height="40" Margin="3,10,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="290" FontSize="14" MinWidth="100"/>
 
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Grid.Row="1" Grid.Column="0" x:Name="lblExtrameter" Content="فروق أمتار قطاعي:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
-                <TextBox  x:Name="txtExtraMeter"  HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="90" FontSize="14" />
-                <Button    x:Name="btnAddRetail" Content="قطاعي" FontSize="14" Margin="0,5"  Grid.ColumnSpan="1" Width="97" />
+                <Label  x:Name="lblCount" Content="الكمية:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
+                <TextBox  x:Name="txtCount"  HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" FontSize="14" MinWidth="100"/>
+
+           
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblExtrameter" Content="سعر الوحدة:" Margin="5,5,5,5" FontSize="12" FontWeight="Bold"/>
+                <TextBox  x:Name="txtExtraMeter"  HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="70" FontSize="14" />
+                <Button   x:Name="btnAddOrder" Visibility="Visible" Content="إضافه إذن" FontSize="14" Margin="10,10,5,10"  Width="20" />
             </StackPanel>
 
         </WrapPanel>
@@ -68,18 +44,10 @@
                     <DataGridTextColumn   Header="كود الاذن"  Binding="{Binding ID}"   x:Name="colID" Visibility="Hidden"/>
                     <DataGridTextColumn   Header="كود الصنف" Binding="{Binding ItemCode}" x:Name="colItemID" Visibility="Hidden"/>
                     <DataGridTextColumn    Header="الصنف" IsReadOnly="True" Binding="{Binding ItemName}" x:Name="colItemName"/>
-                    <DataGridTextColumn   Header="كود اللون" Binding="{Binding ColorCode}" x:Name="colColorID" Visibility="Hidden"/>
-                    <DataGridTextColumn   Header="اللون" IsReadOnly="True" Binding="{Binding ColorName, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colName"/>
-                    <DataGridTextColumn   Header="عدد الاتواب"  IsReadOnly="True" Binding="{Binding RollCount, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colRollCount"/>
-                    <DataGridTextColumn   Header="عدد الامتار" IsReadOnly="True"  Binding="{Binding MeterCount, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colMeterCount"/>
-                    <DataGridTextColumn   Header="الخصم" IsReadOnly="True" Binding="{Binding Discount, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colDiscount"/>
-                    <DataGridTextColumn   Header="السعر" Binding="{Binding price, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colPrice"/>
-                    <DataGridTextColumn   Header="بعد الخصم" IsReadOnly="True" Binding="{Binding priceLower, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colpriceLower"/>
+                    <DataGridTextColumn   Header="الكمية"  IsReadOnly="True" Binding="{Binding RollCount, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colRollCount"/>
+                    <DataGridTextColumn   Header="سعر الوحدة" Binding="{Binding price, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colPrice"/>
                     <DataGridTextColumn   Header="اجمالي السعر" IsReadOnly="True" Binding="{Binding TotalPrice, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colTotalPrice"/>
-                    <DataGridTextColumn   Header=" بعد الخصم" IsReadOnly="True" Binding="{Binding TotalPriceLower, NotifyOnTargetUpdated=True, UpdateSourceTrigger=LostFocus}" x:Name="colTotalPriceLower"/>
-                    <DataGridTextColumn   Header="مرحله الخصم" Binding="{Binding DiscountPhase}" x:Name="colDiscountPhase" Visibility="Hidden"/>
-                    <DataGridTextColumn   Header="اذن المخزن" Binding="{Binding TranNum}" x:Name="coltranNum" Visibility="Hidden"/>
-
+                   
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -102,15 +70,13 @@
 
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" x:Name="lblTotalRoll" Content=" عدد الاتواب :" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
-            <Label Grid.Row="0" Grid.Column="1" x:Name="lblTotalRoll_v" Content="0" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
-            <Label Grid.Row="0" Grid.Column="2" x:Name="lblTotalmeter" Content="عدد الأمتار" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
-            <Label Grid.Row="0" Grid.Column="3" x:Name="lblTotalmeter_v" Content="0.00" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblTotalCount" Content=" الكمية :" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
+            <Label Grid.Row="0" Grid.Column="1" x:Name="lblTotalCount_v" Content="0" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
+            
 
             <Label Grid.Row="0" Grid.Column="4" x:Name="lblTotalPrice" Content="السعر" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
             <Label Grid.Row="0" Grid.Column="5" x:Name="lblTotalPrice_v" Content="0.00" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
-            <Label Grid.Row="0" Grid.Column="6" x:Name="lblTotalPriceLower" Content="السعر بعد خ" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
-            <Label Grid.Row="0" Grid.Column="7" x:Name="lblTotalPriceLower_v" Content="0.00" Margin="5,5,5,5" FontSize="14" FontWeight="Bold"/>
+           
             <Button Grid.Row="1" Grid.Column="5"  x:Name="btnSaveOrder" Content="حفظ" FontSize="16" Margin="10,5,45,5" Grid.ColumnSpan="1"  />
             <Button Grid.Row="1" Grid.Column="6"  x:Name="btnClear" Content="جديد" FontSize="16" Margin="5,5,0,5" Grid.ColumnSpan="1"  />
 

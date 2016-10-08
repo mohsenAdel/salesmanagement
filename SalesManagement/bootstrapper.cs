@@ -32,6 +32,7 @@ namespace SalesManagement
 
             Container.RegisterType(typeof(object), typeof(Item), "Item");
             Container.RegisterType(typeof(object), typeof(ItemsList), "ItemsList");
+            Container.RegisterType(typeof(object), typeof(SalesTrans), "SalesTrans");
 
 
 

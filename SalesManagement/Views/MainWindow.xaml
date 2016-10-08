@@ -214,7 +214,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Grid.RenderTransform>
-                <Controls:ResearchControl >
+                <Controls:ResearchControl Margin="-10,10,10,-10" >
                     <Controls:ResearchControl.Template>
                         <ControlTemplate TargetType="Controls:ResearchControl">
                             <Grid>
@@ -238,7 +238,7 @@
                             </Grid>
                         </ControlTemplate>
                     </Controls:ResearchControl.Template>
-                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="ItemsList"/>
+                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="SalesTrans"/>
                 </Controls:ResearchControl>
             </Grid>
 
