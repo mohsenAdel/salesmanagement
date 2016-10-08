@@ -10,3 +10,15 @@ c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccess
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+E:\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\SalesManagement\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\SalesManagement\DataAccessLayer\bin\Debug\Domain.dll
+E:\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.dll
+E:\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\SalesManagement\DataAccessLayer\bin\Debug\Domain.pdb
+E:\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.xml
+E:\SalesManagement\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+E:\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\SalesManagement\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

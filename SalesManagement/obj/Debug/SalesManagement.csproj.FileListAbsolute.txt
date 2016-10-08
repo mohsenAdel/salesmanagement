@@ -50,3 +50,11 @@ E:\SalesManagement\SalesManagement\obj\Debug\Views\MainWindow.g.cs
 E:\SalesManagement\SalesManagement\obj\Debug\Views\MainWindow.baml
 E:\SalesManagement\SalesManagement\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\SalesManagement\SalesManagement\obj\Debug\App.baml
+E:\SalesManagement\SalesManagement\bin\Debug\Domain.dll
+E:\SalesManagement\SalesManagement\bin\Debug\DataAccessLayer.dll
+E:\SalesManagement\SalesManagement\bin\Debug\EntityFramework.dll
+E:\SalesManagement\SalesManagement\bin\Debug\Domain.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\DataAccessLayer.pdb
+E:\SalesManagement\SalesManagement\bin\Debug\EntityFramework.xml
+E:\SalesManagement\SalesManagement\bin\Debug\EntityFramework.SqlServer.dll
+E:\SalesManagement\SalesManagement\bin\Debug\EntityFramework.SqlServer.xml

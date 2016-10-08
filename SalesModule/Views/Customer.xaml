@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SalesModule.Views.Customer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SalesModule.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <ControlTemplate x:Key="ErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder />
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+
+        </Style>
+
+        </UserControl.Resources>
+
+    <Grid  FlowDirection="RightToLeft" x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                
+                
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="الكود" Foreground="#FF444444" VerticalAlignment="Center" Width="Auto" Height="Auto" HorizontalAlignment="Right" Grid.ColumnSpan="1" Margin="5,0,0,0" />
+        <TextBlock Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="SharesTextBox" Name="SharesTextBox" Text="{Binding CurrrentCustomer.ID, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" HorizontalAlignment="Stretch" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="الاسم:" Foreground="#FF444444" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="5,0,0,0" />
+        <TextBox Name="txtName" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrrentCustomer.CustomerName, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="الهاتف:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+        <TextBox Name="txtPhone" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrrentCustomer.CustomerPhone, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+        <Button Content="حفظ"  Grid.Row="3" Grid.Column="1" Command="{Binding SaveCustomerCommand }"></Button>
+    </Grid>
+</UserControl>

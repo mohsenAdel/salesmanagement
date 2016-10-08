@@ -8,3 +8,13 @@ c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\Domain\bin
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\Domain\obj\Debug\Domain.dll
 c:\users\mohsen\documents\visual studio 2015\Projects\SalesManagement\Domain\obj\Debug\Domain.pdb
+E:\SalesManagement\Domain\bin\Debug\Domain.dll.config
+E:\SalesManagement\Domain\bin\Debug\Domain.dll
+E:\SalesManagement\Domain\bin\Debug\Domain.pdb
+E:\SalesManagement\Domain\bin\Debug\EntityFramework.dll
+E:\SalesManagement\Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\SalesManagement\Domain\bin\Debug\EntityFramework.xml
+E:\SalesManagement\Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\SalesManagement\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+E:\SalesManagement\Domain\obj\Debug\Domain.dll
+E:\SalesManagement\Domain\obj\Debug\Domain.pdb

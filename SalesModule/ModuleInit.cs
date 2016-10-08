@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
+using SalesModule.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,8 +35,8 @@ namespace SalesModule
 
             // TODO: 03 - The EmployeeModule configures the EmployeeListView to automatically appear in the Left region (using View Discovery).
             // Show the Employee List view in the shell's left hand region.
-            //this.regionManager.RegisterViewWithRegion("ContentRegion",
-            //                                          typeof(customer));
+            this.regionManager.RegisterViewWithRegion("ContentRegion",
+                                                      typeof(CustomerList));
 
             //  this.regionManager.RegisterViewWithRegion("details",
             //     typeof(cst));

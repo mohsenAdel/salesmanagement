@@ -7,6 +7,7 @@ using Prism.Unity;
 using Microsoft.Practices.Unity;
 using System.Windows;
 using SalesModule;
+using SalesModule.Views;
 
 namespace SalesManagement
 {
@@ -27,8 +28,8 @@ namespace SalesManagement
             base.ConfigureContainer();
 
             //  Container.RegisterType(typeof(object), typeof(Views.Customers), "Customers");
-          //  Container.RegisterType(typeof(object), typeof(cst), "cst");
-            
+            Container.RegisterType(typeof(object), typeof(Customer), "cst");
+
         }
 
         protected override void ConfigureModuleCatalog()
