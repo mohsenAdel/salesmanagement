@@ -30,11 +30,9 @@ E:\SalesManagement\SalesModule\bin\Debug\DataAccessLayer.pdb
 E:\SalesManagement\SalesModule\bin\Debug\Domain.pdb
 E:\SalesManagement\SalesModule\bin\Debug\EntityFramework.xml
 E:\SalesManagement\SalesModule\bin\Debug\EntityFramework.SqlServer.xml
-E:\SalesManagement\SalesModule\obj\Debug\Views\Customer.g.cs
 E:\SalesManagement\SalesModule\obj\Debug\Views\CustomerList.g.cs
 E:\SalesManagement\SalesModule\obj\Debug\SalesModule_MarkupCompile.cache
 E:\SalesManagement\SalesModule\obj\Debug\SalesModule_MarkupCompile.lref
-E:\SalesManagement\SalesModule\obj\Debug\Views\Customer.baml
 E:\SalesManagement\SalesModule\obj\Debug\Views\CustomerList.baml
 E:\SalesManagement\SalesModule\obj\Debug\SalesModule.g.resources
 E:\SalesManagement\SalesModule\obj\Debug\Views\Item.g.cs

@@ -28,10 +28,10 @@ namespace SalesManagement
             base.ConfigureContainer();
 
             //  Container.RegisterType(typeof(object), typeof(Views.Customers), "Customers");
-            Container.RegisterType(typeof(object), typeof(Customer), "cst");
+            Container.RegisterType(typeof(object), typeof(CustomerList), "Customers");
 
-            Container.RegisterType(typeof(object), typeof(Item), "Item");
-            Container.RegisterType(typeof(object), typeof(ItemsList), "ItemsList");
+            
+            Container.RegisterType(typeof(object), typeof(ItemsList), "Items");
             Container.RegisterType(typeof(object), typeof(SalesTrans), "SalesTrans");
 
 

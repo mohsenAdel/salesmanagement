@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalesModule.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace SalesModule.Views
     /// </summary>
     public partial class SalesTrans : UserControl
     {
-        public SalesTrans()
+        public SalesTrans(SalesTransViewModel ViewModel)
         {
             InitializeComponent();
+
+            this.DataContext = ViewModel;
         }
     }
 }

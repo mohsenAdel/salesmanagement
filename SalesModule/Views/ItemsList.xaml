@@ -6,67 +6,135 @@
              xmlns:local="clr-namespace:SalesModule.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <ControlTemplate x:Key="ErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder />
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+
+        </Style>
+
+    </UserControl.Resources>
     <Grid FlowDirection="RightToLeft">
+       
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="btnNewItem" Content="اضافة جديد" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="Item"/>
-        <ListView BorderThickness="0" Width="Auto" Grid.Row="1"
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="btnNewItem" Content="اضافة جديد" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="Item"/>
+            <ListView BorderThickness="0" Width="Auto" Grid.Row="1"
                  ItemsSource="{Binding Path=Items,Mode=TwoWay,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}"
-                  SelectedItem="{Binding Path=CurrentPositionSummaryItem, Mode=TwoWay}"  AlternationCount="2"
+                  SelectedItem="{Binding Path=CurrentPositionItem, Mode=TwoWay}"  AlternationCount="2"
                   IsSynchronizedWithCurrentItem="True" AutomationProperties.AutomationId="PositionSummaryGrid" >
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Current positions"
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Current positions"
                           >
 
-                    <GridViewColumn Header="الكود"  
+                        <GridViewColumn Header="الكود"  
                   DisplayMemberBinding="{Binding ID}"
                   Width="65" />
-                    <GridViewColumn Header="الاسم"  
+                        <GridViewColumn Header="الاسم"  
                   DisplayMemberBinding="{Binding itemName}"
                   Width="85" />
-                    <GridViewColumn Header="الكمية"  
+                        <GridViewColumn Header="الكمية"  
                   DisplayMemberBinding="{Binding ItemCount}"
                                     
                   Width="85" />
 
 
-                    <GridViewColumn Header="وحدة البيع"  
+                        <GridViewColumn Header="وحدة البيع"  
                   DisplayMemberBinding="{Binding UnitPrice.UntPrice}"
                                     
                   Width="85" />
 
-                    <GridViewColumn Header="سعر الوحدة"  
+                        <GridViewColumn Header="سعر الوحدة"  
                   DisplayMemberBinding="{Binding SuggestedPrice}"
                                     
                   Width="85" />
 
-                    <!--<GridViewColumn Header="حد الأمان"  
+                        <!--<GridViewColumn Header="حد الأمان"  
                   DisplayMemberBinding="{Binding MenimumCount}"
                                     
                   Width="85" />-->
-                    
 
-                    <GridViewColumn Header="Actions">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="47"/>
-                                        <ColumnDefinition  Width="47"/>
-                                    </Grid.ColumnDefinitions>
 
-                                    <Button Grid.Column="0" Command="{Binding Path=DataContext.GetCurrentCustomerCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="Item" AutomationProperties.AutomationId="ActionsBuyButton" Template="{StaticResource AddButtonTemplate}"  Cursor="Hand" Width="30" />
-                                    <Button Grid.Column="1" Command="{Binding Path=DataContext.SellCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding Path=TickerSymbol}" AutomationProperties.AutomationId="ActionsSellButton" Template="{StaticResource RemoveButtonTemplate}" Cursor="Hand"  Width="30"/>
+                        <GridViewColumn Header="Actions">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="47"/>
+                                            <ColumnDefinition  Width="47"/>
+                                        </Grid.ColumnDefinitions>
 
-                                </Grid>
+                                        <Button Grid.Column="0" Command="{Binding Path=DataContext.GetCurrentCustomerCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="Item" AutomationProperties.AutomationId="ActionsBuyButton" Template="{StaticResource AddButtonTemplate}"  Cursor="Hand" Width="30" />
+                                        <Button Grid.Column="1" Command="{Binding Path=DataContext.SellCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding Path=TickerSymbol}" AutomationProperties.AutomationId="ActionsSellButton" Template="{StaticResource RemoveButtonTemplate}" Cursor="Hand"  Width="30"/>
 
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                                    </Grid>
+
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+
+
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="الكود" Foreground="#FF444444" VerticalAlignment="Center" Width="Auto" Height="Auto" HorizontalAlignment="Right" Grid.ColumnSpan="1" Margin="5,0,0,0" />
+            <TextBlock Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="SharesTextBox" Name="SharesTextBox" Text="{Binding CurrentPositionItem.ID, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" HorizontalAlignment="Stretch" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="إسم الصنف:" Foreground="#FF444444" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="5,0,0,0" />
+            <TextBox Name="txtName" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.itemName, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="رقم الصنف:" Foreground="#FF444444" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="5,0,0,0" />
+            <TextBox Name="txtItemNumberName" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.ItemNumber, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="الكمية:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox Name="txtCounr" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.ItemCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="حد الخطر:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox Name="txtMenimumCount" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.MenimumCount, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="اجمالي سعر الشراء:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox Name="txtTotalPrice" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.TotalPrice, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="وحدة البيع:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <ComboBox x:Name="OrderTypeCombo" AutomationProperties.AutomationId="OrderTypeComboBox" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="UntPrice" SelectedValue="{Binding Path=CurrentPositionItem.UnitPrice, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ItemsSource="{Binding UnitsPrice}"  Grid.Row="6" Grid.Column="1" Width="400" Height="Auto"  FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="سعر البيع:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox Name="txtSuggestedPrice" AutomationProperties.AutomationId="PriceLimitTextBox" Text="{Binding CurrentPositionItem.SuggestedPrice, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <Button Content="حفظ"  Grid.Row="8" Grid.Column="1" Command="{Binding SaveItemCommand }" Width="200"></Button>
+        </Grid>
+
     </Grid>
 </UserControl>

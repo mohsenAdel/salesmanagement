@@ -29,10 +29,12 @@ namespace SalesModule.ViewModels
             Items = new ObservableCollection<Item>(data.Items.Include("UnitPrice").ToList());
             NavigateCommand = new DelegateCommand<string>(Navigate);
             GetCurrentItemCommand = new DelegateCommand<string>(CurrentItemCommand);
-            EventAggregator.GetEvent<evntUpdateList>().Subscribe(UpdateItemList);
+           
+
+            UnitsPrice = new ObservableCollection<UnitPrice>(data.UnitPrices.ToList());
         }
 
-        private void UpdateItemList(string obj)
+        private void UpdateItemList()
         {
             Items = new ObservableCollection<Item>(data.Items.ToList());
 
@@ -41,16 +43,15 @@ namespace SalesModule.ViewModels
         private void CurrentItemCommand(string Uri)
         {
             evntGetItem.GetEvent<evntGetItem>().Publish(
-               CurrentPositionSummaryItem);
-            _RegionManager.RequestNavigate("details", Uri);
+               CurrentPositionItem);
+           // _RegionManager.RequestNavigate("details", Uri);
         }
 
         private void Navigate(string Uri)
         {
+            CurrentPositionItem = new Item();
 
-            evntGetItem.GetEvent<evntGetCustomer>().Publish(
-                new Customer());
-            _RegionManager.RequestNavigate("details", Uri);
+          //  _RegionManager.RequestNavigate("details", Uri);
         }
 
         private ObservableCollection<Item> _Items;
@@ -66,19 +67,19 @@ namespace SalesModule.ViewModels
             }
         }
 
-        private Item currentPositionSummaryItem;
+        private Item currentPositionItem;
 
-        public Item CurrentPositionSummaryItem
+        public Item CurrentPositionItem
         {
-            get { return currentPositionSummaryItem; }
+            get { return currentPositionItem; }
             set
             {
-                if (SetProperty(ref currentPositionSummaryItem, value))
+                if (SetProperty(ref currentPositionItem, value))
                 {
-                    if (currentPositionSummaryItem != null)
+                    if (currentPositionItem != null)
                     {
                         evntGetItem.GetEvent<evntGetItem>().Publish(
-                            currentPositionSummaryItem);
+                            currentPositionItem);
 
                     }
                 }
@@ -87,5 +88,61 @@ namespace SalesModule.ViewModels
 
 
         public DelegateCommand<String> GetCurrentItemCommand { get; set; }
+
+        private bool CanSaveItem()
+        {
+            return true;
+        }
+
+        private IEventAggregator _EventAggregator;
+
+
+        private void ExcuteSaveItem()
+        {
+            if (CurrrentItem.ID > 0)
+            {
+                data.Entry(CurrrentItem).State = System.Data.Entity.EntityState.Modified;
+            }
+            else
+            {
+                data.Items.Add(CurrrentItem);
+            }
+
+
+            data.SaveChanges();
+            UpdateItemList();
+          //  _EventAggregator.GetEvent<evntUpdateList>().Publish("updateCustomerList");
+        }
+
+        
+        private Item _currentItem;
+
+        public Item CurrrentItem
+        {
+
+
+            get { return this._currentItem; }
+            set
+            {
+
+                SetProperty(ref _currentItem, value);
+
+            }
+        }
+        public DelegateCommand SaveItemCommand { get; set; }
+
+
+        private ObservableCollection<UnitPrice> _UnitPrices;
+
+        public ObservableCollection<UnitPrice> UnitsPrice
+        {
+            get { return this._UnitPrices; }
+            set
+            {
+
+                SetProperty(ref _UnitPrices, value);
+
+            }
+        }
     }
 }

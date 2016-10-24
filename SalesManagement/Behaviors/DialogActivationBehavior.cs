@@ -1,15 +1,15 @@
-﻿using Prism.Regions;
-using Prism.Regions.Behaviors;
-using System;
-using System.Collections.Generic;
+
+
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using Prism.Regions;
+using Prism.Regions.Behaviors;
 
 namespace SalesManagement.Behaviors
 {
+    /// <summary>
+    /// Defines a behavior that creates a Dialog to display the active view of the target <see cref="IRegion"/>.
+    /// </summary>
     public abstract class DialogActivationBehavior : RegionBehavior, IHostAwareRegionBehavior
     {
         /// <summary>

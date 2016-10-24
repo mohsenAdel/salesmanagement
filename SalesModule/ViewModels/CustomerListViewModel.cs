@@ -20,9 +20,10 @@ namespace SalesModule.ViewModels
     {
 
         private IEventAggregator evntGetCustomer;
-        public DelegateCommand<String> NavigateCommand { get; set; }
+        public DelegateCommand<String> AddNewCustomerCommand { get; set; }
         DBContext data = new DBContext();
         private readonly IRegionManager _RegionManager;
+        public DelegateCommand SaveCustomerCommand { get; set; }
 
         public CustomerListViewModel(IEventAggregator CustomerEvnt, IRegionManager RegionManager, IEventAggregator EventAggregator)
         {
@@ -30,12 +31,18 @@ namespace SalesModule.ViewModels
 
             _RegionManager = RegionManager;
             Customers = new ObservableCollection<Customer>(data.Customers.ToList());
-            NavigateCommand = new DelegateCommand<string>(Navigate);
+            AddNewCustomerCommand = new DelegateCommand<string>(NewCustomerCommand);
             GetCurrentCustomerCommand= new DelegateCommand<string>(CurrentCustomerCommand);
-            EventAggregator.GetEvent<evntUpdateList>().Subscribe(UpdateCustomerList);
+           
+
+            SaveCustomerCommand = new DelegateCommand(ExcuteSaveCustomer, CanSaveCustomer);
+            if (CurrentPositionCustomer == null)
+            {
+                CurrentPositionCustomer = new Customer();
+            }
         }
 
-        private void UpdateCustomerList(string obj)
+        private void UpdateCustomerList()
         {
             Customers = new ObservableCollection<Customer>(data.Customers.ToList());
             
@@ -44,16 +51,14 @@ namespace SalesModule.ViewModels
         private void CurrentCustomerCommand(string Uri)
         {
             evntGetCustomer.GetEvent<evntGetCustomer>().Publish(
-               CurrentPositionSummaryItem);
-            _RegionManager.RequestNavigate("details", Uri);
+               CurrentPositionCustomer);
+          //  _RegionManager.RequestNavigate("details", Uri);
         }
 
-        private void Navigate(string Uri)
+        private void NewCustomerCommand(string Uri)
         {
 
-            evntGetCustomer.GetEvent<evntGetCustomer>().Publish(
-                new Customer());
-            _RegionManager.RequestNavigate("details", Uri);
+            CurrentPositionCustomer = new Customer();
         }
 
         private ObservableCollection<Customer> _Customers;
@@ -69,19 +74,19 @@ namespace SalesModule.ViewModels
             }
         }
 
-        private Customer currentPositionSummaryItem;
+        private Customer currentPositionCustomer;
 
-        public Customer CurrentPositionSummaryItem
+        public Customer CurrentPositionCustomer
         {
-            get { return currentPositionSummaryItem; }
+            get { return currentPositionCustomer; }
             set
             {
-                if (SetProperty(ref currentPositionSummaryItem, value))
+                if (SetProperty(ref currentPositionCustomer, value))
                 {
-                    if (currentPositionSummaryItem != null)
+                    if (currentPositionCustomer != null)
                     {
                         evntGetCustomer.GetEvent<evntGetCustomer>().Publish(
-                            currentPositionSummaryItem);
+                            currentPositionCustomer);
                        
                     }
                 }
@@ -90,5 +95,35 @@ namespace SalesModule.ViewModels
 
 
         public DelegateCommand<String> GetCurrentCustomerCommand { get; set; }
+
+       
+
+
+        private bool CanSaveCustomer()
+        {
+            return true;
+        }
+
+     
+
+
+        private void ExcuteSaveCustomer()
+        {
+            if (CurrentPositionCustomer.ID > 0)
+            {
+                data.Entry(CurrentPositionCustomer).State = System.Data.Entity.EntityState.Modified;
+            }
+            else
+            {
+                data.Customers.Add(CurrentPositionCustomer);
+            }
+
+
+            data.SaveChanges();
+            UpdateCustomerList();
+            //_EventAggregator.GetEvent<evntUpdateList>().Publish("updateCustomerList");
+        }
+
+        
     }
 }

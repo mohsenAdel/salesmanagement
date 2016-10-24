@@ -6,50 +6,99 @@
              xmlns:local="clr-namespace:SalesModule.Views"
              mc:Ignorable="d" 
             >
+    <UserControl.Resources>
+
+        <ControlTemplate x:Key="ErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder />
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+
+        </Style>
+
+    </UserControl.Resources>
     <Grid FlowDirection="RightToLeft">
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition/>
+            <RowDefinition/>
+            
         </Grid.RowDefinitions>
-        <Button Name="btnNewCustomer" Content="اضافة جديد" HorizontalAlignment="Left" Width="285" Command="{Binding NavigateCommand}" CommandParameter="cst"/>
-        <ListView BorderThickness="0" Width="Auto" Grid.Row="1"
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="btnNewCustomer" Content="اضافة جديد" HorizontalAlignment="Left" Width="285" Command="{Binding AddNewCustomerCommand}" CommandParameter="cst"/>
+            <ListView BorderThickness="0" Width="Auto" Grid.Row="1"
                  ItemsSource="{Binding Path=Customers,Mode=TwoWay,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}"
-                  SelectedItem="{Binding Path=CurrentPositionSummaryItem, Mode=TwoWay}"  AlternationCount="2"
+                  SelectedItem="{Binding Path=CurrentPositionCustomer, Mode=TwoWay}"  AlternationCount="2"
                   IsSynchronizedWithCurrentItem="True" AutomationProperties.AutomationId="PositionSummaryGrid" >
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Current positions"
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Current positions"
                           >
 
-                    <GridViewColumn Header="الكود"  
+                        <GridViewColumn Header="الكود"  
                   DisplayMemberBinding="{Binding ID}"
                   Width="65" />
-                    <GridViewColumn Header="الاسم"  
+                        <GridViewColumn Header="الاسم"  
                   DisplayMemberBinding="{Binding CustomerName}"
                   Width="85" />
-                    <GridViewColumn Header="رقم الهاتف"  
+                        <GridViewColumn Header="رقم الهاتف"  
                   DisplayMemberBinding="{Binding CustomerPhone}"
                   Width="85" />
 
-                    <GridViewColumn Header="Actions">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="47"/>
-                                        <ColumnDefinition  Width="47"/>
-                                    </Grid.ColumnDefinitions>
+                        <GridViewColumn Header="Actions">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="47"/>
+                                            <ColumnDefinition  Width="47"/>
+                                        </Grid.ColumnDefinitions>
 
-                                    <Button Grid.Column="0" Command="{Binding Path=DataContext.GetCurrentCustomerCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="cst" AutomationProperties.AutomationId="ActionsBuyButton" Template="{StaticResource AddButtonTemplate}"  Cursor="Hand" Width="30" />
-                                    <Button Grid.Column="1" Command="{Binding Path=DataContext.SellCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding Path=TickerSymbol}" AutomationProperties.AutomationId="ActionsSellButton" Template="{StaticResource RemoveButtonTemplate}" Cursor="Hand"  Width="30"/>
+                                        <Button Grid.Column="0" Command="{Binding Path=DataContext.GetCurrentCustomerCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="cst" AutomationProperties.AutomationId="ActionsBuyButton" Template="{StaticResource AddButtonTemplate}"  Cursor="Hand" Width="30" />
+                                        <Button Grid.Column="1" Command="{Binding Path=DataContext.SellCommand, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" CommandParameter="{Binding Path=TickerSymbol}" AutomationProperties.AutomationId="ActionsSellButton" Template="{StaticResource RemoveButtonTemplate}" Cursor="Hand"  Width="30"/>
 
-                                </Grid>
+                                    </Grid>
 
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+
+
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="الكود" Foreground="#FF444444" VerticalAlignment="Center" Width="Auto" Height="Auto" HorizontalAlignment="Right" Grid.ColumnSpan="1" Margin="5,0,0,0" />
+            <TextBlock Grid.Row="0" Grid.Column="1"  Name="SharesTextBox" Text="{Binding CurrentPositionCustomer.ID, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" HorizontalAlignment="Stretch" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="الاسم:" Foreground="#FF444444" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Height="Auto" Margin="5,0,0,0" />
+            <TextBox Name="txtName"  Text="{Binding CurrentPositionCustomer.CustomerName, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="Auto" Height="Auto" Text="الهاتف:" Foreground="#FF444444" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox Name="txtPhone" Text="{Binding CurrentPositionCustomer.CustomerPhone, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" Validation.ErrorTemplate="{StaticResource ErrorTemplate}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="Auto" VerticalAlignment="Center" Margin="5,0,0,0"  />
+
+            <Button Content="حفظ"  Grid.Row="3" Grid.Column="1" Command="{Binding SaveCustomerCommand }" Width="200"></Button>
+        </Grid>
+       
     </Grid>
     
 </UserControl>

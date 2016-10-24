@@ -15,6 +15,5 @@ E:\SalesManagement\Domain\bin\Debug\EntityFramework.dll
 E:\SalesManagement\Domain\bin\Debug\EntityFramework.SqlServer.dll
 E:\SalesManagement\Domain\bin\Debug\EntityFramework.xml
 E:\SalesManagement\Domain\bin\Debug\EntityFramework.SqlServer.xml
-E:\SalesManagement\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 E:\SalesManagement\Domain\obj\Debug\Domain.dll
 E:\SalesManagement\Domain\obj\Debug\Domain.pdb

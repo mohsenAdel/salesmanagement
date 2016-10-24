@@ -1370,4 +1370,10 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="{x:Type ControlTemplate}" TargetType="{x:Type ControlTemplate}">
+        <Style.Resources>
+            <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>

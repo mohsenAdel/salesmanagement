@@ -73,12 +73,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Workflow.ComponentModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -97,6 +99,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviors\AutoPopulateExportedViewsBehavior.cs" />
+    <Compile Include="Behaviors\DialogActivationBehavior.cs" />
+    <Compile Include="Behaviors\IViewRegionRegistration.cs" />
+    <Compile Include="Behaviors\IWindow.cs" />
+    <Compile Include="Behaviors\RegionPopupBehaviors.cs" />
+    <Compile Include="Behaviors\ReturnCommandBehavior.cs" />
+    <Compile Include="Behaviors\ViewExportAttribute.cs" />
+    <Compile Include="Behaviors\WindowDialogActivationBehavior.Desktop.cs" />
+    <Compile Include="Behaviors\WindowWrapper.Desktop.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="VisibilityToStarHeightConverter.Desktop.cs" />
     <Page Include="Controls\RoundedBox.xaml">
@@ -111,13 +122,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Behaviors\DialogActivationBehavior.cs" />
-    <Compile Include="Behaviors\IViewRegionRegistration.cs" />
-    <Compile Include="Behaviors\IWindow.cs" />
-    <Compile Include="Behaviors\RegionPopupBehaviors.cs" />
-    <Compile Include="Behaviors\ReturnCommandBehavior.cs" />
-    <Compile Include="Behaviors\WindowDialogActivationBehavior.Desktop.cs" />
-    <Compile Include="Behaviors\WindowWrapper.Desktop.cs" />
     <Compile Include="bootstrapper.cs" />
     <Compile Include="Controls\AnimatedTabControl.Desktop.cs" />
     <Compile Include="Controls\ResearchControl.cs" />
